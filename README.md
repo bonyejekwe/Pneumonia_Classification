@@ -15,7 +15,21 @@ Neural networks are particularly effective at image recognition and classificati
 
 ## Setup:
 <p> Our dataset consisted of images of X-rays where the patient didn't have pneumonia or had bacterial or virual pneumonia. We had 1,341 cases of no pneumonia patient X-rays and 3,875 cases of pneumonia X-rays in our train dataset. We had 234 cases of no pneumonia patient X-rays and 390 cases of pneumonia X-rays in our test dataset. This gave us a 10.68% test-train split. Our X-rays without pneumonia look tend to be more clear in the chesr area, while X-rays with pneumonia can be considered "cloudy." However, at first glance at the images there doesn't appear to be much of a difference.</p>
-<p> For our experiment we setup our neural network in python and opted to use machine learning library PyTorch since we had experience using it in our homework assignments. We setup our model in a Jupyter notebook so we wouldn't have to rerun entire files as we worked on creating our model. This helped since we didn't want to load in our images everytime we made a minor change. We used a simple two-layer neureal network to start with. Our first model used the ReLU activation function.  </p
+<p> For our experiment we setup our neural network in python and opted to use machine learning library PyTorch since we had experience using it in our homework assignments. We setup our model in a Jupyter notebook so we wouldn't have to rerun entire files as we worked on creating our model. This helped since we didn't want to load in our images everytime we made a minor change. We used a simple two-layer neureal network to start with. Our first model used the ReLU activation function.  </p>
+
+## Results:
+<p>The preliminary results from our baseline model shows that we get us a 62.5% accuracy when classifying images from the test set. This model incorporates our default settings. It has initial parameters we used to reshape each image (120 pixels for image height and 160 pixels for image length), and has our default network setup (a single hidden layer and the ReLU activation function).  </p>
+
+<p>The first parameter we chose to vary was the image reshape settings, as we wanted to determine what was the smallest image size that allows us to still get decent results. We decided to fix the height/length ratio as 3:4 because we found most images in our dataset fit those proportions. We found that increasing the image size did not increase the accuracy, but when we decreased the image size (fixing that proportion), the accuracy eventually went down. For example, we tried 30:40 as the height/length settings, and this brought the accuracy down to 34%. We decided that 60:80 is the best proportions to use as it allows us to benefit from the highest accuracy without the image being too large. </p>
+
+## Discussion:
+<p>These results are decent, but could be improved upon. 62% accuracy is not sufficient for our task of classifying pneumonia images, as we want to be more sure that are model is correct in its predictions before using it in a real world setting. That said, we think that by continuing to vary the architecture of our network, we will find much better results. We think that integrating a convolutional layer, and varying the activation functions will lead us to significantly improved results. </p>
+
+## Conclusion:
+<p>We have identified the problem of trying to classify between x-rays of people who have pneumonia and of those who don’t. We have determined an approach to doing this by creating a neural network that will take in as input the image and classify it as a patient that has pneumonia or not. We decided to use a single layer and will work with the ReLU activation function, as well as specified image resize parameters as our baseline, and have determined that they are able to classify the image with a 62% accuracy with these default settings. The remaining portion of our project is playing around with these parameters and determining whether they make the classifications better or worse.  </p>
+
+## References:
+<p>Other than the following documentation for PyTorch, we did not consult any other resources so far. </p>
 
 Documentation:
 
