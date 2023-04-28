@@ -1,1 +1,4 @@
 chest_xray/
+.ipynb_checkpoints
+.DS_Store
+cnn_models.ipynb
